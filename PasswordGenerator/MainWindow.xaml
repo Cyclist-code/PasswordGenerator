@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordGenerator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Генератор паролей" Height="500" Width="350" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF1D222C" Offset="0"/>
+            <GradientStop Color="#FF232D3E" Offset="1"/>
+            <GradientStop Color="#FF232D3E" Offset="0.543"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock Text="Password Generator" FontSize="18" Foreground="White"
+                       FontWeight="Bold" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Height="25" Width="25" Content="-" BorderThickness="0"
+                        Background="{x:Null}" Foreground="White" FontSize="16" FontWeight="Bold"/>
+                <Button Height="25" Width="25" Content="X" BorderThickness="0"
+                        Background="{x:Null}" Foreground="White" FontSize="16" FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            
+        </Grid>
         
     </Grid>
+    
 </Window>
