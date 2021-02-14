@@ -16,10 +16,71 @@
     </Window.Background>
 
     <Window.Resources>
+
+        <!--Оформление стиля кнопки сворачивания-->
+        <Color x:Key="MouseLeaveMinBtn" A="100" R="29" G="34" B="44"/>
+        <Color x:Key="MouseOverMinBtn" A="100" R="128" G="125" B="125"/>
+        <SolidColorBrush x:Key="BorderBrushMinBtn" Color="#FF1D222C"/>
+
+        <Style TargetType="Button" x:Key="StyleMinBtn">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="TemplateBorder" RenderTransformOrigin="0.5,0.5"
+                                BorderBrush="{StaticResource BorderBrushMinBtn}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Border.Background>
+                                <SolidColorBrush x:Name="BackgroundBorder" Color="{StaticResource MouseLeaveMinBtn}"/>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                    <Condition Property="IsEnabled" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="RenderTransform" TargetName="TemplateBorder">
+                                    <Setter.Value>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                        </TransformGroup>
+                                    </Setter.Value>
+                                </Setter>
+                                <MultiTrigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BackgroundBorder" 
+                                                            Storyboard.TargetProperty="Color"
+                                                            To="{StaticResource MouseOverMinBtn}" 
+                                                            Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </MultiTrigger.EnterActions>
+                                <MultiTrigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BackgroundBorder"
+                                                            Storyboard.TargetProperty="Color"
+                                                            To="{StaticResource MouseLeaveMinBtn}"
+                                                            Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </MultiTrigger.ExitActions>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <!--Оформление стиля кнопки закрытия-->
         <Color x:Key="MouseLeaveCloseBtn" A="255" R="29" G="34" B="44"/>
         <Color x:Key="MouseOverCloseBtn" A="255" R="212" G="11" B="11"/>
-        <SolidColorBrush x:Key="BorderBrushCloseButton" Color="#FF1D222C"/>
+        <SolidColorBrush x:Key="BorderBrushCloseBtn" Color="#FF1D222C"/>
 
         <Style TargetType="Button" x:Key="CloseButton">
             <Setter Property="BorderThickness" Value="0"/>
@@ -30,7 +91,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="TemplateBorder" RenderTransformOrigin="0.5,0.5"
-                                BorderBrush="{StaticResource BorderBrushCloseButton}" BorderThickness="{TemplateBinding BorderThickness}">
+                                BorderBrush="{StaticResource BorderBrushCloseBtn}" BorderThickness="{TemplateBinding BorderThickness}">
                             <Border.Background>
                                 <SolidColorBrush x:Name="BackgroundBorder" Color="{StaticResource MouseLeaveCloseBtn}"/>
                             </Border.Background>
@@ -89,7 +150,7 @@
             <TextBlock Text="Password Generator" FontSize="18" Foreground="White"
                        FontWeight="Bold" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Height="25" Width="25" BorderThickness="0" Background="{x:Null}">
+                <Button Style="{StaticResource StyleMinBtn}">
                     <Image  Source="Assets/minus.png" Height="18" Width="18"/>
                     <Button.ToolTip>
                         <ToolTip Content="Свернуть" Placement="Mouse" />
