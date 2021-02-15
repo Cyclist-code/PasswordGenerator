@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordGenerator"
         mc:Ignorable="d"
-        Title="Генератор паролей" Height="500" Width="350" WindowStartupLocation="CenterScreen"
+        x:Name="MainWin" MouseLeftButtonDown="MainWin_MouseLeftButtonDown"
+        Title="Password Generator" Height="500" Width="350" WindowStartupLocation="CenterScreen"
         WindowStyle="None" ResizeMode="NoResize">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -35,16 +36,20 @@
             <TextBlock Text="Password Generator" FontSize="18" Foreground="White"
                        FontWeight="Bold" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Style="{StaticResource StyleMinBtn}">
+                <Button x:Name="MinBtn" Style="{StaticResource StyleMinBtn}"
+                        Click="MinBtn_Click">
                     <Image  Source="Assets/minus.png" Height="18" Width="18"/>
                     <Button.ToolTip>
-                        <ToolTip Content="Minimize" Placement="Mouse" />
+                        <ToolTip Content="Minimize" Placement="Mouse" Background="#FF4A4E56" Foreground="White"
+                                 BorderThickness="0"/>
                     </Button.ToolTip>
                 </Button>
-                <Button Style="{StaticResource CloseButton}">
+                <Button x:Name="CloseBtn" Style="{StaticResource CloseButton}"
+                        Click="CloseBtn_Click">
                     <Image  Source="Assets/close.png" Height="18" Width="18"/>
                     <Button.ToolTip>
-                        <ToolTip Content="Close" Placement="Mouse" />
+                        <ToolTip Content="Close" Placement="Mouse" Background="#FF4A4E56" Foreground="White"
+                                 BorderThickness="0"/>
                     </Button.ToolTip>
                 </Button>
             </StackPanel>
