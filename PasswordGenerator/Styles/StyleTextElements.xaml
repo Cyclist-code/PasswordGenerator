@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Styling the application name-->
+    <Style TargetType="TextBlock" x:Key="TextAppName">
+        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Height" Value="35"/>
+    </Style>
+
+    <!--Heading styling "Password length"-->
+    <Style TargetType="TextBlock" x:Key="HeadingPassowrdLength">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <!--Heading styling "Generated password"-->
+    <Style TargetType="TextBlock" x:Key="HeadingGeneratedPassword">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <!--Styling the number of characters-->
+    <Style TargetType="TextBlock" x:Key="CharactersPassword">
+        <Setter Property="Margin" Value="5,5,0,0"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <!--Styling the password output-->
+    <Style TargetType="TextBox" x:Key="PasswordOutput">
+        <Setter Property="Margin" Value="0,10,0,0"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Width" Value="210"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+    </Style>
+
+</ResourceDictionary>
