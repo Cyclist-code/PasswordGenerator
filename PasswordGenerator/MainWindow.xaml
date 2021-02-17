@@ -21,6 +21,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/StyleButtons.xaml"/>
                 <ResourceDictionary Source="Styles/StyleTextElements.xaml"/>
+                <ResourceDictionary Source="Styles/StyleStackPanels.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -32,8 +33,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <Polygon Fill="White" Opacity="0.2" 
-                     Points="80,0,90,7,260,7,270,0"/>
+            <Polygon Fill="White" Opacity="0.2" Points="80,0,90,7,260,7,270,0"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button x:Name="MinBtn" Style="{StaticResource StyleMinBtn}"
                         Click="MinBtn_Click">
@@ -56,8 +56,7 @@
 
         <Grid Grid.Row="1">
             <TextBlock Text="Password Generator" Style="{StaticResource TextAppName}"/>
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" 
-                        Height="55" VerticalAlignment="Top" Margin="0,70,0,0">
+            <StackPanel Style="{StaticResource AreaSelectionLengthPassword}">
                 <TextBlock Text="Password length" Style="{StaticResource HeadingPassowrdLength}"/>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal">
@@ -79,12 +78,12 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,140,0,0">
+            <StackPanel Style="{StaticResource AreaGeneratedPassword}">
                 <TextBlock Text="Generated password" Style="{StaticResource HeadingGeneratedPassword}"/>
                 <TextBox Style="{StaticResource PasswordOutput}"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,25,0,0">
+            <StackPanel Style="{StaticResource AreaWorkButton}">
                 <Button Content="Generate" Height="40" Width="100" FontSize="16" 
                        Foreground="White" Background="{x:Null}" BorderBrush="White"  BorderThickness="1"/>
                 <Button Content="Save" Height="40" Width="100" FontSize="16" 

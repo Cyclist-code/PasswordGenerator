@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--Styling the password length selection area-->
+    <Style TargetType="StackPanel" x:Key="AreaSelectionLengthPassword">
+        <Setter Property="Orientation" Value="Vertical"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Height" Value="55"/>
+        <Setter Property="Margin" Value="0,70,0,0"/>
+    </Style>
+
+    <!--Styling the password generation area-->
+    <Style TargetType="StackPanel" x:Key="AreaGeneratedPassword">
+        <Setter Property="Orientation" Value="Vertical"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Margin" Value="0,140,0,0"/>
+    </Style>
+
+    <!--Styling the area with buttons-->
+    <Style TargetType="StackPanel" x:Key="AreaWorkButton">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,25,0,0"/>
+    </Style>
+
+</ResourceDictionary>
