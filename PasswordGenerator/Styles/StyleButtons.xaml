@@ -121,11 +121,12 @@
         </Setter>
     </Style>
 
-    <!--Styling the password generation button-->
-    <Color x:Key="MouseLeaveGenerateBtn" A="255" R="35" G="45" B="62"/>
-    <Color x:Key="MouseOverGenerateBtn" A="255" R="20" G="102" B="20"/>
-    <SolidColorBrush x:Key="BorderBrushGenerateBtn" Color="White"/>
+    <!--Common colors for two buttons (Generate, Save)-->
+    <Color x:Key="MouseLeaveBtn" A="255" R="35" G="45" B="62"/>
+    <SolidColorBrush x:Key="BorderBrushBtn" Color="White"/>
 
+    <!--Styling the password generation button-->
+    <Color x:Key="MouseOverGenerateBtn" A="255" R="20" G="102" B="20"/>
     <Style TargetType="Button" x:Key="GeneratePasswordButton">
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="Width" Value="100"/>
@@ -138,9 +139,9 @@
                 <ControlTemplate TargetType="Button">
 
                     <Border x:Name="TemplateBorder" RenderTransformOrigin="0.5,0.5" CornerRadius="4"
-                                BorderBrush="{StaticResource BorderBrushGenerateBtn}" BorderThickness="{TemplateBinding BorderThickness}">
+                                BorderBrush="{StaticResource BorderBrushBtn}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Border.Background>
-                            <SolidColorBrush x:Name="BackgroundBorder" Color="{StaticResource MouseLeaveGenerateBtn}"/>
+                            <SolidColorBrush x:Name="BackgroundBorder" Color="{StaticResource MouseLeaveBtn}"/>
                         </Border.Background>
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
@@ -175,7 +176,7 @@
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetName="BackgroundBorder"
                                                             Storyboard.TargetProperty="Color"
-                                                            To="{StaticResource MouseLeaveGenerateBtn}"
+                                                            To="{StaticResource MouseLeaveBtn}"
                                                             Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -188,5 +189,71 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+    <!--Styling the password save button-->
+    <Color x:Key="MouseOverSaveBtn" A="255" R="45" G="69" B="118"/>
+    <Style TargetType="Button" x:Key="SavePasswordButton">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="10,0,0,0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+
+                    <Border x:Name="TemplateBorder" RenderTransformOrigin="0.5,0.5" CornerRadius="4"
+                                BorderBrush="{StaticResource BorderBrushBtn}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BackgroundBorder" Color="{StaticResource MouseLeaveBtn}"/>
+                        </Border.Background>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsEnabled" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="RenderTransform" TargetName="TemplateBorder">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1.05" ScaleY="1.05"/>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+
+                            <MultiTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="BackgroundBorder" 
+                                                            Storyboard.TargetProperty="Color"
+                                                            To="{StaticResource MouseOverSaveBtn}" 
+                                                            Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </MultiTrigger.EnterActions>
+
+                            <MultiTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="BackgroundBorder"
+                                                            Storyboard.TargetProperty="Color"
+                                                            To="{StaticResource MouseLeaveBtn}"
+                                                            Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </MultiTrigger.ExitActions>
+                        </MultiTrigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
