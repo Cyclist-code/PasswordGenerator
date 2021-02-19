@@ -84,8 +84,7 @@
             </StackPanel>
 
             <StackPanel Style="{StaticResource AreaWorkButton}">
-                <Button Content="Generate" Height="40" Width="100" FontSize="16" 
-                       Foreground="White" Background="{x:Null}" BorderBrush="White"  BorderThickness="1"/>
+                <Button Content="Generate" Style="{StaticResource GeneratePasswordButton}"/>
                 <Button Content="Save" Height="40" Width="100" FontSize="16" 
                         Foreground="White" Background="{x:Null}" BorderBrush="White" BorderThickness="1"  Margin="10,0,0,0"/>
             </StackPanel>
