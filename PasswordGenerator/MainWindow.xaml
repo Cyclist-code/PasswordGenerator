@@ -62,19 +62,23 @@
                 <TextBlock Text="Password length" Style="{StaticResource HeadingPassowrdLength}"/>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal">
-                        <RadioButton x:Name="EightCharactersRB" Margin="0,10,0,0"/>
+                        <RadioButton x:Name="EightCharactersRB" Margin="0,10,0,0"
+                                     GroupName="PasswordLength"/>
                         <TextBlock Text="8" Style="{StaticResource CharactersPassword}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
-                        <RadioButton x:Name="TenCharactersRB" Margin="0,10,0,0"/>
+                        <RadioButton x:Name="TenCharactersRB" Margin="0,10,0,0"
+                                     GroupName="PasswordLength"/>
                         <TextBlock Text="10" Style="{StaticResource CharactersPassword}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
-                        <RadioButton x:Name="TwelveCharactersRB" Margin="0,10,0,0"/>
+                        <RadioButton x:Name="TwelveCharactersRB" Margin="0,10,0,0"
+                                     GroupName="PasswordLength"/>
                         <TextBlock Text="12" Style="{StaticResource CharactersPassword}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
-                        <RadioButton x:Name="SixteenCharactersRB" Margin="0,10,0,0"/>
+                        <RadioButton x:Name="SixteenCharactersRB" Margin="0,10,0,0"
+                                     GroupName="PasswordLength"/>
                         <TextBlock Text="16" Style="{StaticResource CharactersPassword}"/>
                     </StackPanel>
                 </StackPanel>
@@ -82,11 +86,12 @@
 
             <StackPanel Style="{StaticResource AreaGeneratedPassword}">
                 <TextBlock Text="Generated password" Style="{StaticResource HeadingGeneratedPassword}"/>
-                <TextBox x:Name="GeneratedPasswordText" Style="{StaticResource PasswordOutput}"/>
+                <TextBox x:Name="OutputGeneratedPassword" Style="{StaticResource PasswordOutput}"/>
             </StackPanel>
 
             <StackPanel Style="{StaticResource AreaWorkButton}">
-                <Button x:Name="GeneratePasswordBtn" Content="Generate" Style="{StaticResource GeneratePasswordButton}"/>
+                <Button x:Name="GeneratePasswordBtn" Content="Generate" Click="GeneratePasswordBtn_Click"
+                        Style="{StaticResource GeneratePasswordButton}"/>
                 <Button x:Name="SavePasswordBtn" Content="Save" Style="{StaticResource SavePasswordButton}"/>
             </StackPanel>
 
