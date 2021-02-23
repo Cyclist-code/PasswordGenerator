@@ -24,6 +24,7 @@
                 <ResourceDictionary Source="Styles/StyleButtons.xaml"/>
                 <ResourceDictionary Source="Styles/StyleTextElements.xaml"/>
                 <ResourceDictionary Source="Styles/StyleStackPanels.xaml"/>
+                <ResourceDictionary Source="Styles/StyleToolTips.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -41,16 +42,14 @@
                         Click="MinBtn_Click">
                     <Image  Source="Assets/minus.png" Height="18" Width="18"/>
                     <Button.ToolTip>
-                        <ToolTip Content="Minimize" Placement="Mouse" Background="#FF4A4E56" Foreground="White"
-                                 BorderThickness="0"/>
+                        <ToolTip Content="Minimize" Style="{StaticResource HelpToolTipBtn}"/>
                     </Button.ToolTip>
                 </Button>
                 <Button x:Name="CloseBtn" Style="{StaticResource CloseButton}"
                         Click="CloseBtn_Click">
                     <Image  Source="Assets/close.png" Height="18" Width="18"/>
                     <Button.ToolTip>
-                        <ToolTip Content="Close" Placement="Mouse" Background="#FF4A4E56" Foreground="White"
-                                 BorderThickness="0"/>
+                        <ToolTip Content="Close" Style="{StaticResource HelpToolTipBtn}"/>
                     </Button.ToolTip>
                 </Button>
             </StackPanel>
