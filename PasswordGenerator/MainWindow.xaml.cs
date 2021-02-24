@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Win32;
+using System;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PasswordGenerator
 {
@@ -41,6 +32,12 @@ namespace PasswordGenerator
         {
             GeneratePassword();
         }
+
+        private void SavePasswordBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SavePassword();
+        }
+
 
         private void GeneratePassword()
         {
@@ -90,6 +87,20 @@ namespace PasswordGenerator
                 }
             }
         }
-        
+
+        private void SavePassword()
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "Text files|*.txt";
+
+            if (saveFile.ShowDialog() == true)
+            {
+                using (StreamWriter sw = new StreamWriter(saveFile.FileName, true))
+                {
+                    sw.WriteLine(OutputGeneratedPassword.Text);
+                    sw.Close();
+                }
+            }
+        }     
     }
 }

@@ -91,7 +91,8 @@
             <StackPanel Style="{StaticResource AreaWorkButton}">
                 <Button x:Name="GeneratePasswordBtn" Content="Generate" Click="GeneratePasswordBtn_Click"
                         Style="{StaticResource GeneratePasswordButton}"/>
-                <Button x:Name="SavePasswordBtn" Content="Save" Style="{StaticResource SavePasswordButton}"/>
+                <Button x:Name="SavePasswordBtn" Content="Save" Click="SavePasswordBtn_Click"
+                        Style="{StaticResource SavePasswordButton}"/>
             </StackPanel>
 
         </Grid>
