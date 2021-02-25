@@ -183,6 +183,17 @@
                             </MultiTrigger.ExitActions>
                         </MultiTrigger>
 
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="RenderTransform" TargetName="TemplateBorder">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="0.99" ScaleY="0.99"/>
+                                </Setter.Value>
+                            </Setter>
+                        </MultiTrigger>
+
                     </ControlTemplate.Triggers>
 
                 </ControlTemplate>
@@ -247,6 +258,17 @@
                                     </Storyboard>
                                 </BeginStoryboard>
                             </MultiTrigger.ExitActions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="RenderTransform" TargetName="TemplateBorder">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="0.99" ScaleY="0.99"/>
+                                </Setter.Value>
+                            </Setter>
                         </MultiTrigger>
 
                     </ControlTemplate.Triggers>
