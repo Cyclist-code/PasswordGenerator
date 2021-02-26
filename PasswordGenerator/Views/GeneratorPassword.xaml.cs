@@ -4,11 +4,11 @@ using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
-namespace PasswordGenerator
+namespace PasswordGenerator.Views
 {
-    public partial class MainWindow : Window
+    public partial class GeneratorPassword : Window
     {
-        public MainWindow()
+        public GeneratorPassword()
         {
             InitializeComponent();
         }
@@ -53,7 +53,7 @@ namespace PasswordGenerator
 
             if (EightCharactersRB.IsChecked == true)
             {
-                for(int i = 0; i < 8; i++)
+                for (int i = 0; i < 8; i++)
                 {
                     generatedPassword += arrayCharacters[randomCharacters.Next(0, 61)];
                     OutputGeneratedPassword.Text = generatedPassword;
@@ -101,6 +101,6 @@ namespace PasswordGenerator
                     sw.Close();
                 }
             }
-        }     
+        }
     }
 }
