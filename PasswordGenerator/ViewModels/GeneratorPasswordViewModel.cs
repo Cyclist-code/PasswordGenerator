@@ -18,6 +18,7 @@ namespace PasswordGenerator.ViewModels
         {
             CloseAppCommand = new RelayCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
             MinAppCommand = new RelayCommand(OnMinAppCommandExecuted, CanMinAppCommandExecute);
+            DragDropAppCommand = new RelayCommand(OnDragDropAppCommandExecuted, CanDragDropAppCommandExecute);
         }
 
         #region Commands
@@ -38,6 +39,15 @@ namespace PasswordGenerator.ViewModels
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
         private bool CanMinAppCommandExecute(object parametr) => true;
+        #endregion
+
+        #region Drag and drop window command
+        public ICommand DragDropAppCommand { get; }
+        private void OnDragDropAppCommandExecuted(object parametr)
+        {
+            Application.Current.MainWindow.DragMove();
+        }
+        private bool CanDragDropAppCommandExecute(object parametr) => true;
         #endregion
 
         #endregion

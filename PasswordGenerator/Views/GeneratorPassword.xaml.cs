@@ -13,11 +13,6 @@ namespace PasswordGenerator.Views
             InitializeComponent();
         }
 
-        private void MainWin_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
-
         private void GeneratePasswordBtn_Click(object sender, RoutedEventArgs e)
         {
             GeneratePassword();
