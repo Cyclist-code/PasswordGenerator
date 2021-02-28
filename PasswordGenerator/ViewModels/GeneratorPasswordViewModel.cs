@@ -13,19 +13,32 @@ namespace PasswordGenerator.ViewModels
 {
     public class GeneratorPasswordViewModel : INotifyPropertyChanged
     {
+
         public GeneratorPasswordViewModel()
         {
             CloseAppCommand = new RelayCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
+            MinAppCommand = new RelayCommand(OnMinAppCommandExecuted, CanMinAppCommandExecute);
         }
 
         #region Commands
 
+        #region Close window command
         public ICommand CloseAppCommand { get; }
-        private void OnCloseAppCommandExecuted(object parametr) 
+        private void OnCloseAppCommandExecuted(object parametr)
         {
             Application.Current.Shutdown();
         }
         private bool CanCloseAppCommandExecute(object parametr) => true;
+        #endregion
+
+        #region Minimize window command
+        public ICommand MinAppCommand { get; }
+        private void OnMinAppCommandExecuted(object parametr)
+        {
+            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+        }
+        private bool CanMinAppCommandExecute(object parametr) => true;
+        #endregion
 
         #endregion
 
