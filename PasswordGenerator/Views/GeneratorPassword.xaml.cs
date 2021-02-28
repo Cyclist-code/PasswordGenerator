@@ -13,21 +13,6 @@ namespace PasswordGenerator.Views
             InitializeComponent();
         }
 
-        private void MinBtn_Click(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
-
-        private void CloseBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-        private void MainWin_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
-
         private void GeneratePasswordBtn_Click(object sender, RoutedEventArgs e)
         {
             GeneratePassword();
