@@ -6,3 +6,5 @@ Also, the password can be saved to a text file by clicking on the "Save" button.
 ## Technologies
 - C# programming language;
 - .NET Framework 4.7.2.
+## Screenshots
+![password-generator](https://user-images.githubusercontent.com/47049219/112255939-c77ff680-8c95-11eb-9d87-f95c3e5e78c2.png)
