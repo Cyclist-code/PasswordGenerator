@@ -122,11 +122,11 @@
     </Style>
 
     <!--Common colors for two buttons (Generate, Save)-->
+    <Color x:Key="MouseOverBtn" A="255" R="12" G="20" B="33"/>
     <Color x:Key="MouseLeaveBtn" A="255" R="35" G="45" B="62"/>
     <SolidColorBrush x:Key="BorderBrushBtn" Color="White"/>
 
-    <!--Styling the password generation button-->
-    <Color x:Key="MouseOverGenerateBtn" A="255" R="20" G="102" B="20"/>
+    <!--Styling the password generation button-->  
     <Style TargetType="Button" x:Key="GeneratePasswordButton">
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="Width" Value="100"/>
@@ -165,7 +165,7 @@
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetName="BackgroundBorder" 
                                                             Storyboard.TargetProperty="Color"
-                                                            To="{StaticResource MouseOverGenerateBtn}" 
+                                                            To="{StaticResource MouseOverBtn}" 
                                                             Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -202,7 +202,6 @@
     </Style>
 
     <!--Styling the password save button-->
-    <Color x:Key="MouseOverSaveBtn" A="255" R="45" G="69" B="118"/>
     <Style TargetType="Button" x:Key="SavePasswordButton">
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="Width" Value="100"/>
@@ -242,7 +241,7 @@
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetName="BackgroundBorder" 
                                                             Storyboard.TargetProperty="Color"
-                                                            To="{StaticResource MouseOverSaveBtn}" 
+                                                            To="{StaticResource MouseOverBtn}" 
                                                             Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
