@@ -9,4 +9,4 @@ Also, the password can be saved to a text file by clicking on the "Save" button.
 ## Architecture
 The application is written using the MVVM pattern. The MVVM pattern is a pattern that helps to clearly separate the business and presentation logic of an application from it's user interface (UI). A clear separation of application logic and user interface helps solve multiple development problems and can make it easier to test, maintain, and develop an application. There are three main components in the MVVM pattern: Model, View, and View Model.
 ## Screenshots
-![password-generator](https://user-images.githubusercontent.com/47049219/112255939-c77ff680-8c95-11eb-9d87-f95c3e5e78c2.png)
+![Main-Window](https://user-images.githubusercontent.com/47049219/129512985-13141c17-82c3-4453-bab1-574be4c6b600.png)
